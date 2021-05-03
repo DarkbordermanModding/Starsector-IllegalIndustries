@@ -1,0 +1,63 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+
+// project level config
+sourceSets.main.java.srcDir 'src'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+build {
+    doLast {
+        copy {
+            from jar
+            into '.'
+        }
+    }
+}
+
+task init_config(type: Exec) {
+    description 'init config'
+    println('Paste the following line to .vscode/settings.json')
+    commandLine 'echo', '{"java.configuration.updateBuildConfiguration": "automatic", "java.project.referencedLibraries": ["lib/**/*.jar"]}'
+}
+
+task run(type: Exec) {
+    description 'Run Starsector'
+    dependsOn build
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        workingDir '../../starsector-core'
+        commandLine 'cmd', '/c', 'start', 'starsector.bat'
+    } else {
+        workingDir '../..'
+        commandLine 'sh', 'starsector.sh'
+    }
+}
+
+task release(type: Exec) {
+    description 'Create releaseable zip file.'
+    commandLine 'sh', 'util/create-release.sh'
+}
+
+// nuke everything and start over
+clean {
+    delete fileTree('.') { include '*.jar' }
+}
+
+// compile time dependencies for most mods
+dependencies {
+    // everything in starsector main folder
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        compile fileTree(dir: '../../starsector-core/', include: '*.jar')
+    } else {
+        compile fileTree(dir: '../../', include: '*.jar')
+    }
+
+    // Test only
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.google.truth:truth:0.30'
+}

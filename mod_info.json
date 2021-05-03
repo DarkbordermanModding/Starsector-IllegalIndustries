@@ -1,0 +1,9 @@
+{
+	"id":"darkborderman.removestuffs",
+	"name":"Remove stuffs",
+	"author":"Darkborderman",
+	"version":"0.0.0",
+	"description":"Add an ability to remove some object from map",
+	"gameVersion":"0.95a-RC12",
+	"jars": ["removestuffs.jar"]
+}

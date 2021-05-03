@@ -1,0 +1,9 @@
+{
+    "scrambleAbandonedStation": true,
+    "scrambleWarningBeacon": true,
+    "scrambleNascentGravityWell": true,
+    "scrambleJumpPoint": false,
+    "ruleCommandPackages":[
+        "data.campaign.rulecmd"
+    ]
+}
