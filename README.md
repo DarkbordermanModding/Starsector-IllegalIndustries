@@ -1,15 +1,48 @@
-# Removestuffs
+# IllegalIndustries
 
-## Build
-`./gradlew build`
+Add overpowered industries to enchance gameplay experience in Starsector.
 
-## Run game to test
-`./gradlew test`
+## Mod archived
 
-## Release package
-`./gradlew release`
+### The mod has been integrated into [Starsector-IndustryOverhaul](https://github.com/DarkbordermanModding/Starsector-IndustryOverhaul)
 
+## Prerequisite
 
-## References
-* https://fractalsoftworks.com/forum/index.php?topic=4106.825
-* https://github.com/jaghaimo/stellics-legacy
+| Name | Version |
+| --- | --- |
+| gradle | 4.4.1 |
+| jq | 1.6 |
+
+### Build jar
+
+1. Run
+```
+gradle build
+```
+Will build jar files under `jars/`
+
+### Run game to test
+
+1. Put project folder under `<game folder>/mods/`
+
+2. Run
+```
+gradle run
+```
+To test gameplay
+
+### Release mod
+
+1. Run
+```
+gradle release
+```
+Will create `<project name>-<version>.zip` under `bin/`
+
+### Repository cleanup
+
+1. Run
+```
+gradle clean
+```
+Will cleanup `bin/` and `jars/`

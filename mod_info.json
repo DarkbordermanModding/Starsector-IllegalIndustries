@@ -1,9 +1,9 @@
 {
-	"id":"darkborderman.removestuffs",
-	"name":"Remove stuffs",
-	"author":"Darkborderman",
-	"version":"0.0.0",
-	"description":"Add an ability to remove some object from map",
-	"gameVersion":"0.95a-RC12",
-	"jars": ["removestuffs.jar"]
+  "id":"darkborderman.illegalindustries",
+  "name":"Illegal Industries",
+  "author":"Darkborderman",
+  "version":"0.0.0",
+  "description":"Add overpowered industries to enchance gameplay experience.",
+  "gameVersion":"0.96a-RC10",
+  "jars": ["jars/illegalindustries.jar"]
 }

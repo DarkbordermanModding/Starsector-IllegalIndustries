@@ -1,9 +1,7 @@
-# gradle files
 .vscode/
 .gradle/
 build/
-bin/
 
 # artifacts
-**/*.jar
-**/*.zip
+jars/
+bin/
